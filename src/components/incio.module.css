@@ -1,0 +1,82 @@
+.inicio_contenedor{
+    background: black;
+}
+.main {
+    color:green
+}
+/* animacion*/
+.caja1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+.caja1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+
+  /* Un solo “gusanito” con cola transparente */
+  background: conic-gradient(
+    rgb(57, 2, 255) 0deg,
+    rgba(4, 210, 251, 0.897) 25deg,
+    rgba(26, 25, 28, 0.1) 60deg,
+    transparent 60deg 360deg
+  );
+    /* máscara para que quede solo el borde y no el relleno */
+  -webkit-mask:
+    radial-gradient(farthest-side,
+      transparent calc(100% - 10px),
+      black calc(100% - 9px));
+  mask:
+    radial-gradient(farthest-side,
+      transparent calc(100% - 10px),
+      black calc(100% - 9px));
+
+  animation: rotateBorder 2s linear infinite;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  z-index: 0;
+}
+/* termina*/
+
+.caja1 img {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+}
+.caja2 h1{
+    font-size: 3rem;
+    background:linear-gradient(90deg, green,white,blue,black) ;
+    background-clip: text;
+    color: transparent;
+}
+
+/*@keyframes de aqui para abajo*/
+
+@keyframes rotateBorder {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateAff {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
