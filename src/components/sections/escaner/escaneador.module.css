@@ -1,0 +1,7 @@
+.escaneador_contenedor{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-Align: center; 
+    margin-Top: 50px;
+}

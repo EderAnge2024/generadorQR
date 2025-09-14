@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import style from "./generarImagen.module.css"
 
 function QRDesdeRuta() {
   const [imagePath, setImagePath] = useState("");
@@ -26,7 +27,7 @@ function QRDesdeRuta() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className={style.generarImagen_contenedor}>
       <h1>Generar QR desde Ruta o URL de Imagen</h1>
 
       <input

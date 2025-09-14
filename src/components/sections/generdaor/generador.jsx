@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import style from "./generdor.module.css"
 
 const Generador = () => {
   const [text, setText] = useState(""); // Texto del input
@@ -16,7 +17,7 @@ const Generador = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className={style.generador_contenedor}>
       <h2>Generar Código QR Dinámico</h2>
 
       <input
@@ -24,7 +25,7 @@ const Generador = () => {
         placeholder="Escribe el texto o URL"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        style={{ padding: "10px", width: "300px", marginTop: "20px" }}
+        className={style.input}
       />
 
       <div ref={qrRef} style={{ display: "inline-block", margin: "20px" }}>
@@ -40,10 +41,10 @@ const Generador = () => {
         )}
       </div>
 
-      <div>
+      <div className={style.botones}>
         <button
           onClick={handleDownload}
-          style={{ padding: "10px 20px" }}
+          className={style.button}
           disabled={!text} // Desactivar si no hay texto
         >
           Descargar QR

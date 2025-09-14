@@ -1,6 +1,7 @@
 // Scanner.jsx
 import React, { useRef, useState, useEffect } from "react";
 import { BrowserQRCodeReader } from "@zxing/browser";
+import style from "./escaneador.module.css";
 
 function Scanner() {
   const videoRef = useRef(null);
@@ -93,7 +94,7 @@ function Scanner() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div className={style.escaneador_contenedor}>
       <h1>Escanear QR</h1>
 
       {!scanning && !scannedUrl && (

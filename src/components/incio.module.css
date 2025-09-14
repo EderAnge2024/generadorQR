@@ -1,7 +1,29 @@
 .inicio_contenedor{
+    height: 150vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background: black;
 }
+.secCbeza{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 25%; 
+
+}
+.botones{
+  display: flex;
+  height: 5%;
+
+}
+.botones button{
+  margin: 10px;
+  background: none;
+  color :white;
+}
 .main {
+    height: 70%;
     color:green
 }
 /* animacion*/
@@ -53,9 +75,19 @@
   height: 190px;
   border-radius: 50%;
 }
-.caja2 h1{
+.caja2 h1 {
     font-size: 3rem;
-    background:linear-gradient(90deg, green,white,blue,black) ;
+    background:linear-gradient(90deg, green,white,blue,rgb(32, 31, 31)) ;
+    background-clip: text;
+    color: transparent;
+}
+.caja2 p {
+    background:linear-gradient(90deg, green,white,blue,rgb(32, 31, 31)) ;
+    background-clip: text;
+    color: transparent;
+}
+.caja2 p  span {
+    background:linear-gradient(90deg, rgb(255, 0, 0),rgb(255, 238, 0),rgb(0, 255, 47),rgb(32, 31, 31)) ;
     background-clip: text;
     color: transparent;
 }

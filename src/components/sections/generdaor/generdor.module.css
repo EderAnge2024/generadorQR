@@ -1,0 +1,19 @@
+.generador_contenedor{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+.input{
+    padding: 10;
+    width: 300px;
+    margin-Top: 20px;
+}
+
+.bontones .button{
+    background: none;
+    color: white;
+    height: auto;
+    margin: 10px;
+    top: 10px;
+}
