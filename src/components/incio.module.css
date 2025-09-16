@@ -1,99 +1,111 @@
-.inicio_contenedor{
-    height: 150vh;
+.inicio_contenedor {
+    min-height: 100vh; /* Para que no quede enorme en celulares */
     display: flex;
     align-items: center;
     flex-direction: column;
     background: black;
+    padding: 1rem;
 }
-.secCbeza{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  height: 25%; 
 
+/* Sección cabecera */
+.secCbeza {
+    display: flex;
+    flex-wrap: wrap; /* Que se acomode en varias filas en pantallas pequeñas */
+    gap: 10px;
+    align-items: center;
+    height: auto; /* quitar altura fija */
+    justify-content: center;
+    text-align: center;
 }
-.botones{
-  display: flex;
-  height: 5%;
 
+/* Botones */
+.botones {
+    display: flex;
+    flex-wrap: wrap; /* que no se salgan en móvil */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
 }
-.botones button{
-  margin: 10px;
-  background: none;
-  color :white;
+.botones button {
+    padding: 0.5rem 1rem;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+/* Main */
 .main {
-    height: 70%;
-    color:green
+    color: green;
+    width: 100%;
+    text-align: center;
 }
-/* animacion*/
-.caja1{
+
+/* Animación caja1 */
+.caja1 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 220px;
-    height: 220px;
+    width: clamp(150px, 40vw, 220px); /* se adapta a pantalla */
+    height: clamp(150px, 40vw, 220px);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
 }
+
 .caja1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-
-  /* Un solo “gusanito” con cola transparente */
-  background: conic-gradient(
-    rgb(57, 2, 255) 0deg,
-    rgba(4, 210, 251, 0.897) 25deg,
-    rgba(26, 25, 28, 0.1) 60deg,
-    transparent 60deg 360deg
-  );
-    /* máscara para que quede solo el borde y no el relleno */
-  -webkit-mask:
-    radial-gradient(farthest-side,
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(
+      rgb(57, 2, 255) 0deg,
+      rgba(4, 210, 251, 0.897) 25deg,
+      rgba(26, 25, 28, 0.1) 60deg,
+      transparent 60deg 360deg
+    );
+    -webkit-mask: radial-gradient(farthest-side,
       transparent calc(100% - 10px),
       black calc(100% - 9px));
-  mask:
-    radial-gradient(farthest-side,
+    mask: radial-gradient(farthest-side,
       transparent calc(100% - 10px),
       black calc(100% - 9px));
-
-  animation: rotateBorder 2s linear infinite;
-  animation-delay: 0s;
-  animation-fill-mode: both;
-  z-index: 0;
+    animation: rotateBorder 2s linear infinite;
+    z-index: 0;
 }
-/* termina*/
 
 .caja1 img {
-  position: relative;
-  width: 190px;
-  height: 190px;
-  border-radius: 50%;
+    position: relative;
+    width: 85%;
+    height: auto;
+    border-radius: 50%;
 }
+
+/* Caja2 textos */
 .caja2 h1 {
-    font-size: 3rem;
-    background:linear-gradient(90deg, green,white,blue,rgb(32, 31, 31)) ;
+    font-size: clamp(1.5rem, 4vw, 3rem); /* adaptable */
+    background: linear-gradient(90deg, green,white,blue,rgb(32, 31, 31));
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align: center;
 }
 .caja2 p {
-    background:linear-gradient(90deg, green,white,blue,rgb(32, 31, 31)) ;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    background: linear-gradient(90deg, green,white,blue,rgb(64, 41, 41));
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align: center;
 }
-.caja2 p  span {
+.caja2 p span {
     background:linear-gradient(90deg, rgb(255, 0, 0),rgb(255, 238, 0),rgb(0, 255, 47),rgb(32, 31, 31)) ;
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-/*@keyframes de aqui para abajo*/
-
+/* Animaciones */
 @keyframes rotateBorder {
   from {
     transform: rotate(360deg);
@@ -103,12 +115,23 @@
   }
 }
 
-@keyframes rotateAff {
-  from {
-    transform: rotate(360deg);
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .secCbeza {
+    flex-direction: column;
+    height: auto;
   }
-  to {
-    transform: rotate(0deg);
+
+  .botones button {
+    width: 80%; /* botones más grandes */
   }
 }
 
+@media (max-width: 480px) {
+  .caja2 h1 {
+    font-size: 1.5rem;
+  }
+  .caja2 p {
+    font-size: 1rem;
+  }
+}

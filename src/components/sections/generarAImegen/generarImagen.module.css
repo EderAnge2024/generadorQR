@@ -4,4 +4,48 @@
     flex-direction: column;
     text-Align: center; 
     margin-Top: 50px;
+}a.generarImagen_contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* centra horizontalmente */
+    justify-content: center;   /* centra verticalmente si tiene altura */
+    text-align: center; 
+    margin-top: 3rem;
+    padding: 1rem;             /* espacio interno para móviles */
+    width: 100%;               /* ocupar todo el ancho */
+    box-sizing: border-box;    /* que padding no rompa ancho */
+    gap: 1rem;                 /* espacio entre elementos internos */
+}
+
+/* Ejemplo de imagen dentro del contenedor */
+.generarImagen_contenedor img {
+    max-width: 100%;           /* no salir del contenedor */
+    height: auto;              /* mantener proporción */
+    border-radius: 10px;
+}
+
+/* Texto dentro del contenedor */
+.generarImagen_contenedor p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* adaptable */
+    color: white;
+    margin: 0.5rem 0;
+}
+
+/* 🔹 Media queries para tablet */
+@media (max-width: 768px) {
+    .generarImagen_contenedor {
+        margin-top: 2rem;
+        padding: 0.8rem;
+    }
+}
+
+/* 🔹 Media queries para móviles */
+@media (max-width: 480px) {
+    .generarImagen_contenedor {
+        gap: 0.8rem; /* menos espacio en móvil */
+    }
+
+    .generarImagen_contenedor p {
+        font-size: 0.9rem; /* texto más chico en móvil */
+    }
 }

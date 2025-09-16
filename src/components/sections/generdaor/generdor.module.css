@@ -1,19 +1,71 @@
-.generador_contenedor{
+.generador_contenedor {
     display: flex;
     flex-direction: column;
+    align-items: center; /* centrado horizontal */
     text-align: center;
-    margin-top: 50px;
-}
-.input{
-    padding: 10;
-    width: 300px;
-    margin-Top: 20px;
+    margin-top: 3rem; /* espacio arriba */
+    padding: 1rem; /* que no pegue con el borde en móviles */
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.bontones .button{
+/* Input */
+.input {
+    padding: 0.6rem;
+    width: clamp(200px, 60%, 300px); /* se adapta al ancho */
+    margin-top: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Botones */
+.bontones {
+    display: flex;
+    flex-wrap: wrap; /* que se acomoden */
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 10px;
+}
+
+.bontones .button {
     background: none;
     color: white;
-    height: auto;
-    margin: 10px;
-    top: 10px;
+    padding: 0.6rem 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.bontones .button:hover {
+    background: white;
+    color: black;
+}
+
+/* 🔹 Media queries para tablets */
+@media (max-width: 768px) {
+    .input {
+        width: 80%; /* input más grande en tablet */
+    }
+
+    .bontones .button {
+        width: 80%;
+    }
+}
+
+/* 🔹 Media queries para móviles */
+@media (max-width: 480px) {
+    .generador_contenedor {
+        margin-top: 2rem;
+    }
+
+    .input {
+        width: 90%; /* casi todo el ancho */
+    }
+
+    .bontones .button {
+        width: 90%;
+        font-size: 0.9rem;
+    }
 }

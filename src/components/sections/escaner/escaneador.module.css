@@ -1,7 +1,78 @@
-.escaneador_contenedor{
+.escaneador_contenedor {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-Align: center; 
-    margin-Top: 50px;
+    flex-direction: column;      /* los hijos en columna */
+    align-items: center;         /* centrado horizontal */
+    justify-content: center;     /* centrado vertical */
+    text-align: center; 
+    margin-top: 3rem;            /* espacio arriba */
+    padding: 1rem;               /* espacio interno para móvil */
+    width: 100%;                 /* ocupa todo el ancho disponible */
+    box-sizing: border-box;      /* padding no aumenta el ancho */
+    gap: 1rem;                   /* espacio entre elementos */
+    background: black;            /* ejemplo de fondo */
+    border-radius: 10px;         /* esquinas redondeadas */
+}
+
+/* Si lleva un input */
+.escaneador_contenedor input {
+    padding: 0.6rem;
+    width: clamp(200px, 60%, 300px); /* se adapta al ancho */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Si lleva botones */
+.escaneador_contenedor button {
+    padding: 0.6rem 1rem;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.escaneador_contenedor button:hover {
+    background: white;
+    color: black;
+}
+
+/* Si lleva imagen */
+.escaneador_contenedor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* 🔹 Media queries tablet */
+@media (max-width: 768px) {
+    .escaneador_contenedor {
+        margin-top: 2rem;
+        padding: 0.8rem;
+    }
+
+    .escaneador_contenedor input {
+        width: 80%;
+    }
+
+    .escaneador_contenedor button {
+        width: 80%;
+    }
+}
+
+/* 🔹 Media queries móviles */
+@media (max-width: 480px) {
+    .escaneador_contenedor {
+        gap: 0.8rem;
+    }
+
+    .escaneador_contenedor input {
+        width: 90%;
+    }
+
+    .escaneador_contenedor button {
+        width: 90%;
+        font-size: 0.9rem;
+    }
 }
